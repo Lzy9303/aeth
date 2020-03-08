@@ -893,8 +893,8 @@ Object - 交易收据对象，如果收据不存在则为null。交易对象的�
 }
 ```
 ---
-## miner_setEtherBase
-miner的setEtherBase方法用来设置接收挖矿奖励的AETH账号。
+## miner_setEtherbase
+miner的setEtherbase方法用来设置接收挖矿奖励的AETH账号。
 
 ## 调用方法
 
@@ -1112,7 +1112,7 @@ JSON RPC：
 返回是绑定PID的列表
 ## 参数
 
-    0x030d91538d3515501e1e45f311e57305786ac8d0 - 地址
+    Address - 0x030d91538d3515501e1e45f311e57305786ac8d0
 
 
 ## 返回值
@@ -1139,7 +1139,7 @@ JSON RPC：
 返回是绑定PID的列表
 ## 参数
 
-    4291418842198847361 - pid
+    pid - 4291418842198847361
 
 
 ## 返回值
@@ -1160,8 +1160,36 @@ JSON RPC：
     ]
 }
 ```
-
 ---
+
+## eth_verifyRawBindPID
+返回是绑定PID的列表
+## 参数
+
+    pid - 绑定串
+
+
+## 返回值
+
+    绑定的详情
+
+## 示例代码
+请求：
+`curl -X POST --data '{"jsonrpc":"2.0","id":0,"method":"eth_verifyRawBindPID","params":["0xf88201a0931bde1dd80c3ccd2f65e6b686add96e466ebf3b7bc006b158025cd7e31fcf12883b8e2eb337ae2f8194030d91538d3515501e1e45f311e57305786ac8d9b8400200428cf51d5a599c82a03b44754e1b0ae8c90cdc46e0e4418224d4037cfa010aee96c24c3ec0bea82cf027c9c1f062880cd680664ead1c6c2a8fb2f935ed58"]}'`
+
+响应：
+```
+{
+    "id": 0,
+    "jsonrpc": "2.0",
+    "result": {
+        "address": "0x030d91538d3515501e1e45f311e57305786ac8d9",
+        "plotterId": "4291418842198847361",
+        "publicKey": "0x931bde1dd80c3ccd2f65e6b686add96e466ebf3b7bc006b158025cd7e31fcf12",
+        "signature": "0x0200428cf51d5a599c82a03b44754e1b0ae8c90cdc46e0e4418224d4037cfa010aee96c24c3ec0bea82cf027c9c1f062880cd680664ead1c6c2a8fb2f935ed58"
+    }
+}
+```
 
 #### 其他
 
